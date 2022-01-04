@@ -23,8 +23,9 @@ jobs:
           [See changes here](https://github.com/${{ github.repository }}/commit/${{github.sha}})
           
   source:
+    needs: ['build']
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.action }}
+      - run: echo ${{ build.status }}
 
 
