@@ -25,7 +25,7 @@ jobs:
   source:
     runs-on: ubuntu-latest
     steps:
-    - name: Update status
-    - run: echo ${{ github.action_path }}
+      - name: Update status
+      - run: echo ${{ github.action_path }}
 
 
