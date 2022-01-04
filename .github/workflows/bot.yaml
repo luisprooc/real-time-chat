@@ -16,7 +16,7 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         format: markdown
         message: |  #https://help.github.com/en/actions/reference/contexts-and-expression-syntax-for-github-actions#github-context
-          New deployment in QA
+          *New deployment in QA*
           Repository: ${{ github.repository }}
           Branch: ${{ github.ref_name }} 
           By: ${{ github.actor }}
