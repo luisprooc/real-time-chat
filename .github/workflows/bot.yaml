@@ -1,7 +1,9 @@
 name: tg-notify
 
-on: [push, pull_request]
-branches: [main, master]
+on: [push, pull_request, release]
+branches: 
+  - main
+  - master
   
 jobs:
   build:
