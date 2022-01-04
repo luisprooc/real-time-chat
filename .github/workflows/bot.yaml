@@ -11,6 +11,11 @@ jobs:
     steps:
     - name: Update status
       uses: appleboy/telegram-action@master
+    - caption:    link anchor
+      tinycap:    link
+      domain:     html
+      desc:       link to see changes
+      wwbody: <a href="https://github.com/${{ github.repository }}/commit/${{github.sha}}">See changes here</a>
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
@@ -19,4 +24,4 @@ jobs:
           Repository: ${{ github.repository }}
           Branch: ${{ github.ref_name }} 
           By: ${{ github.actor }}
-          <a href="https://github.com/${{ github.repository }}/commit/${{github.sha}})">See changes here</a>
+          ${{ caption.wwbody }} 
