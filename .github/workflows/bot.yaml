@@ -12,7 +12,4 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }
         message: |  #https://help.github.com/en/actions/reference/contexts-and-expression-syntax-for-github-actions#github-context
-          | Event: ${{ github.event_name }} 📎
-          | Repository: commit in ${{ github.repository }} 📚
-          | By: "${{ github.actor }}" 💻 
-          | Branch: ${{ github.ref_name }} 🎋
+          Event ** ${{ github.event_name }} 📎 \n Repository: commit in ${{ github.repository }} 📚 \n By: "${{ github.actor }}" 💻 \n Branch: ${{ github.ref_name }} 🎋
