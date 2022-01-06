@@ -9,10 +9,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Update status
+    - name: Update status in Certificado (Only backend)
       uses: appleboy/telegram-action@master
       with:
-        to: ${{ secrets.TELEGRAM_TO }} && ${{ secrets.TELEGRAM_TO_GROUP }}
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        format: markdown
+        message: |  #https://help.github.com/en/actions/reference/contexts-and-expression-syntax-for-github-actions#github-context
+          *New deployment in QA*
+          Repository: ${{ github.repository }}
+          Branch: ${{ github.ref_name }} 
+          By: ${{ github.actor }}
+          [See changes here](https://github.com/${{ github.repository }}/commit/${{github.sha}})
+          
+    - name: Update status in Certificado (Only frontend)
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO_GROUP }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         format: markdown
         message: |  #https://help.github.com/en/actions/reference/contexts-and-expression-syntax-for-github-actions#github-context
